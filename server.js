@@ -11,7 +11,7 @@ const {
   getTweetsById,
 } = require('./services/database');
 
-const port = 3333;
+const port = process.env.PORT;
 const secret = 'mysecret1234';
 
 const app = express();
