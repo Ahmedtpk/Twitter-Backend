@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -12,7 +13,8 @@ const {
 } = require('./services/database');
 
 const port = process.env.PORT;
-const secret = 'mysecret1234';
+// const port = 3333;
+const secret = process.env.SECRET
 
 const app = express();
 
