@@ -1,12 +1,10 @@
 const { Pool } = require('pg');
+require('dotenv').config();
+
 
 const database = new Pool({
-  // connectionString: 'postgres://me:1234@localhost:5432/twatter',
-  user: 'postgres',
-  host: 'localhost',
-  database: 'twatter1',
-  password: 'Ahmed123',
-  port: 5432,
+  connectionString: process.env.DATABASE_URL,
+  ssl: process.env.IS_LOCAL ? undefined : { rejectUnauthorized: false},
 });
 
 function getTweets() {
